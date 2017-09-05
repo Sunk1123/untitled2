@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>游戏简介</title>
+    <style>
+
+        .a21,.a31,.a41,.a61{
+            width: 70px;;
+            height: 30px;
+            background: red;
+            display: inline-block;
+            position: absolute;
+            right: 0;
+           bottom: 0;
+            display: none;
+
+
+        }
+        .outer{
+            width: 100%;
+            height: 400px;
+            background: gainsboro;
+
+
+        }
+        .left{
+            width: 65%;
+            height:92% ;
+            margin-left: 2%;
+            background: yellowgreen;
+            display: inline-block;
+            float: left;
+            margin: 2% 2% 1% 2%;
+
+
+        }
+        .right{
+            width:25%;
+            height:92%;
+            background:white;
+            display: inline-block;
+            float: right;
+           margin: 2% 2% 1% 2%;
+        }
+        .a1{
+            width: 30%;
+            height: 40%;
+            margin-left: 2%;
+            margin-top: 3%;
+            background-image: url(img/game_1.jpg);
+            background-size: 100% 100%;
+            background-repeat:no-repeat ;
+            display: inline-block;
+
+        }
+        .a1:hover .a11{
+             display: block;
+        }
+        .a2:hover .a21{
+            display: block;
+        }
+        .a3:hover .a31{
+            display: block;
+        }
+        .a4:hover .a41{
+            display: block;
+        }
+        .a6:hover .a61{
+            display: block;
+        }
+
+        .a11 {
+            width: 70px;;
+            height: 30px;
+            background: red;
+            display: inline-block;
+            position: absolute;
+            left: 166px;
+            bottom: 653px;
+            display: none;
+
+        }
+
+        .a2{
+            width: 30%;
+            height: 40%;
+            margin-left: 2%;
+            background-image: url(img/game_2.jpg);
+            background-size: 100% 100%;
+            background-repeat:no-repeat ;
+            display: inline-block;
+            position: relative;
+        }
+        .a3{
+            width: 30%;
+            height: 40%;
+            margin-left: 2%;
+            background-image: url(img/game_3.jpg);
+            background-size: 100% 100%;
+            background-repeat:no-repeat ;
+            display: inline-block;
+            position: relative;
+        }
+        .a4{
+            width: 30%;
+            height: 40%;
+            margin-top: 4%;
+            margin-left: 2%;
+            background-image: url(img/game_4.jpg);
+            background-size: 100% 100%;
+            background-repeat:no-repeat ;
+            display: inline-block;
+            position: relative;
+
+        }
+        .a5{
+            width: 30%;
+            height: 40%;
+            margin-top: 4%;
+            margin-left: 2%;
+            background-image: url(img/game_5.jpg);
+            background-size: 100% 100%;
+            background-repeat:no-repeat ;
+            display: inline-block;
+            position: relative;
+
+        }
+        .a6{
+            width: 30%;
+            height: 40%;
+            margin-top: 4%;
+            margin-left: 2%;
+            background-image: url(img/game_6.jpg);
+            background-size: 100% 100%;
+            background-repeat:no-repeat ;
+            display: inline-block;
+            position: relative;
+
+        }
+        .right{
+            background-image: url("img/hot.png");
+            background-size: 100% 10%;
+            background-repeat:no-repeat ;
+        }
+        h4{
+           margin-top: 0px;
+            margin-left: 50px;
+}
+span{
+    margin-left: 4px;
+
+}
+        </style>
+</head>
+<body>
+
+    <div class="outer">
+        <div class="left">
+            
+        <div class="a1"><div class="a11">开始游戏</div></div>
+
+        <div class="a2"><div class="a21">开始游戏</div></div>
+        <div class="a3"><div class="a31">开始游戏</div></div>
+        <div class="a4"><div class="a41">开始游戏</div></div>
+        <div class="a5"></div>
+        <div class="a6"><div class="a61">开始游戏</div></div>
+
+        </div>
+
+        <div class="right">
+            <h4 > 游戏实时排行榜</h4>
+            <hr>
+            <span>1</span>&nbsp;&nbsp;&nbsp;<span style="color: red">蓝月传奇</span>
+            &nbsp;&nbsp;&nbsp;<span style="color: burlywood">XY游戏</span>
+            &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;<img src="img/range.png">
+            <hr style="border:1px dotted red">
+            <span>2</span>&nbsp;&nbsp;&nbsp;<span >传奇盛世</span>
+            &nbsp;&nbsp;&nbsp;<span style="color: burlywood">XY游戏</span>
+            &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;<img src="img/range.png">
+            <hr style="border:1px dotted red">
+            <span>3</span>&nbsp;&nbsp;&nbsp;<span>梁山传奇</span>
+            &nbsp;&nbsp;&nbsp;<span style="color: burlywood">XY游戏</span>
+            &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;<img src="img/range.png">
+            <hr style="border:1px dotted red">
+            <span>4</span>&nbsp;&nbsp;&nbsp;<span >原始传奇</span>
+            &nbsp;&nbsp;&nbsp;<span style="color: burlywood">XY游戏</span>
+            &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;<img src="img/range.png">
+            <hr style="border:1px dotted red">
+            <span>5</span>&nbsp;&nbsp;&nbsp;<span >传奇世界</span>
+            &nbsp;&nbsp;&nbsp;<span style="color: burlywood">XY游戏</span>
+            &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;<img src="img/range.png">
+            <hr style="border:1px dotted red">
+            <span>6</span>&nbsp;&nbsp;&nbsp;<span >经典传奇</span>
+            &nbsp;&nbsp;&nbsp;<span style="color: burlywood">XY游戏</span>
+            &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;<img src="img/range.png">
+            <hr style="border:1px dotted red">
+            <span>7</span>&nbsp;&nbsp;&nbsp;<span >新版传奇</span>
+            &nbsp;&nbsp;&nbsp;<span style="color: burlywood">XY游戏</span>
+            &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;<img src="img/range.png">
+            <hr style="border:1px dotted red">
+            <span>8</span>&nbsp;&nbsp;&nbsp;<span >盛世传奇</span>
+            &nbsp;&nbsp;&nbsp;<span style="color: burlywood">XY游戏</span>
+            &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;<img src="img/range.png">
+
+            
+        </div>
+
+    </div>
+
+</body>
+</html>
