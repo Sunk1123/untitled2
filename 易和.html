@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       .top span{
+            text-align: center;
+            font-size: small;
+           display: inline-block;
+
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+       .top a{
+            text-decoration: none;
+           display: inline-block;
+           font-size: small;
+        }
+
+        .outer{
+            width: 1920px;
+            height: 35px;
+            background: rgba(155, 195, 207, 0.78);
+            display: inline-block;
+            position: relative;
+
+        }
+        .top{
+            margin-left: 370px;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+        }
+        .more{
+            background: url("imgjiguo/more.png");
+            background-size: 15px 10px;
+            width: 15px;
+            height: 10px;
+            background-repeat:no-repeat ;
+            display: inline-block;
+            position: absolute;
+            top: 5px;
+            left:100px;
+             margin-left:-10px;
+             }
+        .more span{
+            margin-right: 30px;
+            text-align: center;
+            font-size: small;
+
+
+
+        }
+       .tel{
+           background: url("imgjiguo/use2.png");
+           background-size: 20px 20px;
+           width: 20px;
+           height: 20px;
+           background-repeat:no-repeat ;
+           display: inline-block;
+           position: absolute;
+           top: 5px;
+           left:890px;
+
+       }
+        .a1{
+            margin-left: 350px;
+        }
+        .first{
+            width: 100%;
+            height: 140px;
+            background: white;
+            margin-top: 30px;
+            overflow: hidden;
+        }
+        .yilife{
+            background: url("imgjiguo/logo.jpg");
+            width: 140px;
+            height: 80px;
+            display: inline-block;
+            margin-left: 370px;
+            float: left;
+
+        }
+        .first_a1{
+            background: deepskyblue;
+            border: 1px solid white;
+            text-align: center;
+            color: white;
+            display: inline;
+
+
+        }
+        .first_a{
+            width: 556px;
+            height: 80px;
+            margin-left:230px;
+            display: inline;
+            background: white;
+            float: left;
+        }
+
+        .first_a3{
+            border: 2px solid deepskyblue ;
+            width: 300px;
+            height: 35px;
+            font-size: large;
+        }
+        .first_a4{
+            background: deepskyblue;
+            margin-left: 1046px;
+            margin-top: -58px;
+            display: inline-block;
+            width: 35px;
+            height: 40px;
+            float: left;
+
+        }
+        .first_a5{
+            width: 125px;
+            height: 35px;
+            margin-left:1100px ;
+            margin-top: -58px;
+            display: inline-block;
+            float: left;
+            border: 1px solid silver;
+            text-align: center;
+
+        }
+       .first_a7{
+           width: 125px;
+           height: 35px;
+           margin-left:1260px ;
+           margin-top: -58px;
+           display: inline-block;
+           float: left;
+           border: 1px solid silver;
+           text-align: center;
+
+       }
+        .first_a6,.first_a8{
+            margin-top: 5px;
+
+            display: inline-block;
+
+        }
+        .first{
+            position: relative;
+        }
+        .first_a9{
+            width: auto;
+            height: 40px;
+
+            display: inline;
+            background: white;
+            position: absolute;
+            left:741px;
+            top: 67px;
+             }
+        .sceond{
+            width: 100%;
+            height: 50px;
+            margin-top: 10px;
+            background: white;
+
+        }
+        .sceond_a1{
+            width: 96px;
+           height: 50px;
+            display: inline-block;
+            margin-left: 370px;
+            float: left;
+            position: relative;
+            left: -355px;
+            top: 45px;
+
+        }
+        .sceond span{
+            font-size: large;
+            text-align: center;
+        }
+        .second_a2{
+            margin-left: 185px;
+        }
+    .third{
+        width: 800px;
+        height: 470px;
+        position: relative;
+        overflow: hidden;
+        margin-left: 500px;
+    }
+
+
+       .item{
+           width: 800px;
+           height: 450px;
+           background-size: 800px 450px;
+           position: absolute;
+
+       }
+       .item1{
+           background-image: url("imgjiguo/c2.jpg");
+          background-repeat:no-repeat ;
+
+       }
+       .item2{
+           background-image: url("imgjiguo/c3.jpg");
+           background-repeat:no-repeat ;
+
+       }
+       .item3{
+           background-image: url("imgjiguo/c4.jpg");
+           background-repeat:no-repeat ;
+
+       }
+       .itemback{
+           background-image: url("imgjiguo/c4.jpg");
+           background-repeat:no-repeat ;
+       }
+
+       .itemfirst{
+           background-image: url("imgjiguo/c2.jpg");
+           background-repeat:no-repeat ;
+
+       }
+
+       .contain{
+           position: relative;
+
+       }
+       .lefts{
+           color: white;
+           font-size: 30px;
+           width: 30px;
+           height: 60px;
+           position: absolute;
+           left: 0;
+           top: 50%;
+           background: rgba(0,0,0,0);
+           display: none;
+       }
+       .rights{
+           color: white;
+           font-size: 30px;
+           width: 30px;
+           height: 60px;
+           position: absolute;
+           right: 0;
+           top: 50%;
+           background: rgba(0,0,0,0);
+           display: none;
+       }
+       .outer:hover .lefts,.outer:hover .rights{
+           display: block;
+       }
+       .lists{
+           border-radius: 9.5px;
+           width: 55px;
+           height: 15px;
+           background: rgba(127,127,127,0.7);
+           position: absolute;
+           left: 50%;
+           bottom: 10px;
+           margin-left: -30px;
+           padding: 2px;
+       }
+       .list{
+           width:15px;
+           height: 15px;
+           background: gray;
+           border-radius: 50%;
+           float: left;
+           margin-left: 3px;
+
+
+       }
+        .forth{
+            width: 100%;
+            height: 160px;
+
+            display: inline;
+            margin-top: 10px;
+        }
+
+        .forth_a1,.forth_a2,.forth_a3,.forth_a4{
+
+            width: 288px;
+            height: 160px;
+             margin-right: -4px;
+            display: inline-block;
+
+
+        }
+       .forth_a1{
+           background: url("imgjiguo/当红好店.png");
+           margin-left: 370px;
+
+       }
+       .forth_a2{
+           background: url("imgjiguo/复古风.png");
+
+
+       }
+       .forth_a3{
+           background: url("imgjiguo/男装馆.png");
+       }
+
+       .forth_a4{
+           background: url("imgjiguo/美妆馆.png");
+       }
+    .forth1_a1{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        display: inline-block;
+        margin-left: 370px;
+    }
+        .fifth_a{
+            width: 100%;
+            height: 375px;
+            background: white;
+            margin-top: 5px;
+            margin-left: 360px;
+        }
+        
+        .fifth_a1{
+            background-image: url("imgjiguo/x1.jpg");
+            width: 316px;
+            height: 349px;
+            display: inline-block;
+            float: left;
+        }
+       .fifth_a2{
+            width:850px;
+           height:85px;
+           display: inline-block;
+           float: left;
+           margin-top: 5px;
+
+
+
+       }
+        .fifth_a3 {
+            width: 210px;
+            height: 113px;
+             margin-left: -4px;
+            border: 1px solid rosybrown;
+            margin-top:-5px;
+            margin-right: 0;
+
+        }
+        .sixth{
+            width: 100%;
+            height: 45px;
+            margin-left: 360px;
+            margin-top: 20px;
+            position: relative;
+
+        }
+        .sixth_a{
+            width: 25px;
+            height: 25px;
+            background-image: url("imgjiguo/车.png");
+            background-size: 25px 25px;
+            position: absolute;
+            left: -30px;
+            bottom: 15px;
+            display: inline-block;
+
+        }
+        .sixth_a3{
+            color:rgba(69, 135, 207, 0.78);
+            font-size: 25px;
+            margin-right: 400px;
+            display: inline-block;
+                }
+        .sixth_a4{
+            margin-right: 50px;
+            font-size: 20px;
+        }
+        .seven{
+            width: 100%;
+            height: 540%;
+            background: white;
+            margin-top: 5px;
+            margin-left: 360px;
+
+        }
+        .seven_a{
+            background-image: url("imgjiguo/c1.jpg");
+            width: 316px;
+            height: 511px;
+            display: inline-block;
+            float: left;
+        }
+        .seven_a1{
+            width:850px;
+            height:520px;
+            display: inline-block;
+            float: left;
+            margin-top: 5px;
+            margin-left: 5px;
+
+        }
+        .seven_a11{
+            width: 270px;
+            height: 260px;
+            margin-right: 10px;
+            background-image: url("imgjiguo/c2.jpg");
+            background-size: 270px 130px;
+            background-repeat: no-repeat;
+            display: inline-block;
+            float: left;
+            position: relative;
+        }
+        .seven_a11:hover .seven_a111{
+            display: block;
+        }
+        .seven_a111{
+            width: 270px;
+            height: 30px;
+            color: white;
+            background: black;
+            opacity: 0.5;
+            font-size: large;
+            text-align: center;
+           position: absolute;
+            top: 100px;
+            display: none;
+        }
+        .seven_a11 img{
+            width: 20px;
+            height: 20px;
+            background-repeat: no-repeat;
+
+        }
+      .seven1{
+          width: 270px;
+          height: 120px;
+          display: inline-block;
+          float: left;
+          position: absolute;
+          top: 150px;
+
+      }
+        .eight{
+            background: url("imgjiguo/footer3.jpg");
+            width: 1180px;
+            height: 120px;
+            margin-left:360px;
+            margin-top: 540px;
+        }
+        .nine{
+            width: 100%;
+            height: 88px;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            margin-left: 360px;
+            background:gray;
+            position: relative;
+        }
+        .nine>span{
+            font-size: 27px;
+            display: inline-block;
+            position: absolute;
+            left: 45px;
+             top: 30px;
+            margin-left: 100px;
+        }
+       .q{
+           width: 175px;
+           height: 50px;
+           margin-right:80px;
+           display: inline-block;
+           margin-top: 15px;
+       }
+    .ten{
+        width: 100%;
+        height: 140px;
+        margin-left: 360px;
+        
+    }
+        .ten_a1{
+            background:url("imgjiguo/logo.jpg") ;
+            background-size: 220px 125px;
+            width:220px;
+            height:125px;
+            background-repeat: no-repeat;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            float: left;
+            display: inline-block;
+            margin-right: 85px;
+
+        }
+        .ten_a2{
+            background: url("imgjiguo/erweima.jpg");
+            width: 125px;
+            height: 125px;
+            float: left;
+            margin-right: 40px;
+            margin-top: 20px;
+        }
+       .ten_a3{
+           background: url("imgjiguo/erweima.jpg");
+           width: 125px;
+           height: 125px;
+           float: left;
+           margin-right: 40px;
+           margin-top: 20px;
+       }
+        .ten_a4{
+            width: 535px;
+            height: 145px;
+            border: 1px solid red;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .ten_a5{
+            margin-top: 10px;
+            width: 100px;
+            /*height: 98px;*/
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        .w1{
+            margin-top: 5px;
+            margin-bottom: 2px;
+            margin-left: 25px;
+            display: inline-block;
+        }
+        .second_b{
+            width: 400px;
+            height: 455px;
+            background: black;
+            opacity: 0.5;
+
+            position: absolute;
+            left: 53px;
+            top: 24px;
+            display: none;
+
+       }
+        .sceond_a1:hover .second_b{
+            display: block;
+        }
+        .h1{
+            font-size: larger;
+
+            color: white;
+            margin-left: 10px;
+
+        }
+       .low{
+           width: 50px;
+           height: 500px;
+           border: 1px solid #ccc;
+           position: fixed;
+           top: 50px;
+           right: 50px;
+           background: chocolate;
+           opacity:0;
+           transition: all 2s;
+       }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="top">
+        <span>所在城市:</span>
+            <a href="#">北京</a>
+        <div class="more" ></div>
+
+            <span class="a1">您好,</span>
+            <span style="color: red">17701269859</span>
+           <a href="#">退出</a>
+            <span>|</span>
+           <a href="#">我的订单</a>
+            <span>|</span>
+            <a href="#">我的消息</a>
+            <span>|</span>
+          <a href="#">我是商家</a>
+            <span>|</span>
+          <div class="tel"></div>
+            <span>400-820-8820</span>
+        </div>
+    </div>
+    <div class="first">
+        <div class="yilife"></div>
+        <div class="first_a9">
+            <span>热门： 酒店   洗车  餐饮  进口  旅游  如家</span>
+
+        </div>
+
+        <div class="first_a">
+            <span class="first_a1">商家</span>&nbsp;&nbsp;
+            <span class="first_a2">商品</span><br>
+            <input class="first_a3" value="请输入商家名称或关键字进行筛选" type="text" >
+
+        </div>
+
+        <img src="imgjiguo/search.png" class="first_a4">
+        <div class="first_a5">
+            <a href="#" class="first_a6">我的易和</a>
+            <img src="imgjiguo/more.png">
+        </div>
+        <div class="first_a7">
+            <a  href="#" class="first_a8">购物车</a>
+            <img src="imgjiguo/more.png">
+        </div>
+
+
+
+    </div>
+    <div class="sceond">
+        <div class="sceond_a1">
+          <span>行内分类</span>
+            <img src="imgjiguo/more.png">
+            <div class="second_b">
+                <a href="#" class="h1">吃俺老孙一棒</a><br>
+                <a href="#" class="h1">吃俺老孙二棒</a><br>
+                <a href="#" class="h1">吃俺老孙三棒</a><br>
+                <a href="#" class="h1">吃俺老孙四棒</a><br>
+                <a href="#" class="h1">吃俺老孙五棒</a><br>
+                <a href="#" class="h1">吃俺老孙六棒</a>
+
+
+            </div>
+
+
+            </div>
+        </div>
+
+        <span class="second_a2">首页</span>
+        <span class="second_a2" style="color: #FF6537">精选品牌</span>
+        <span class="second_a2">今日特价</span>
+        <span class="second_a2">积分商城</span>
+        <span class="second_a2">加入易和</span>
+        <span class="second_a2" style="color: #FF6537">在线客服</span>
+    </div>
+    <div class="third">
+    <div class="contain" style="left: 0px;left: -800px;transition: all 1s">
+        <div class="item itemback" style="left: 0px"></div>
+        <div class="item item1" style="left:800px;"></div>
+        <div class="item item2" style="left:1600px;"></div>
+        <div class="item item3" style="left:2400px;"></div>
+        <div class="item itemfirst" style="left: 3200px"></div>
+    </div>
+    <div class="lefts"><</div>
+    <div class="rights">
+        >
+    </div>
+    <div class="lists">
+        <div class="list" style="background: #F40"></div>
+        <div class="list"></div>
+        <div class="list"></div>
+    </div>
+
+</div>
+    <div class="forth">
+    <div class="forth_a1"></div>
+    <div class="forth_a2"></div>
+    <div class="forth_a3"></div>
+    <div class="forth_a4"></div><br>
+    <span  class="forth1_a1" style="color: rgba(207, 61, 35, 0.78);font-size:35px ">精选</span>
+    <span style="color: rgba(69, 135, 207, 0.78);font-size:35px">品牌</span>
+    <span>Brand selection</span>
+</div>
+    <hr style="color:blue;margin-top: 20px ">
+    <div class="fifth_a">
+    <div class="fifth_a1"></div>
+    <div class="fifth_a2">
+        <img  class="fifth_a3" src="imgjiguo/x2.jpg">
+        <img  class="fifth_a3" src="imgjiguo/x3.jpg">
+        <img class="fifth_a3" src="imgjiguo/x4.jpg">
+        <img class="fifth_a3"  src="imgjiguo/x5.jpg">
+        <img  class="fifth_a3" src="imgjiguo/x2.jpg">
+        <img  class="fifth_a3" src="imgjiguo/x3.jpg">
+        <img class="fifth_a3" src="imgjiguo/x4.jpg">
+        <img class="fifth_a3"  src="imgjiguo/x5.jpg">
+        <img  class="fifth_a3" src="imgjiguo/x2.jpg">
+        <img  class="fifth_a3" src="imgjiguo/x3.jpg">
+        <img class="fifth_a3" src="imgjiguo/x4.jpg">
+        <img class="fifth_a3"  src="imgjiguo/x5.jpg">
+    </div>
+</div>
+    <div class="sixth">
+      <div class="sixth_a"></div>
+        <span  class="sixth_a3">汽车装饰</span>
+        <span class="sixth_a4">爆款推荐</span>
+        <span class="sixth_a4">精品女装</span>
+        <span class="sixth_a4">精品男装</span>
+
+    </div>
+    <hr style="color: darkblue";>
+    <div class="seven">
+        <div class="seven_a"></div>
+
+        <div class="seven_a1">
+            <div class="seven_a11">
+                <div class="seven_a111">同城汽车装饰中心</div>
+                <div class="seven1">
+              <img src="imgjiguo/人.png"> &nbsp;<span> 李杰</span><br>
+                <img src="imgjiguo/电话.png"> &nbsp;<span>18699563265</span><br>
+                <img src="imgjiguo/地址.png"> &nbsp;<span>浙江省台州市温岭人民路281号</span>
+                    </div>
+            </div>
+
+              <div class="seven_a11"> <div class="seven_a111">同城汽车装饰中心</div>
+                  <div class="seven1">
+                      <img src="imgjiguo/人.png"> &nbsp;<span> 李杰</span><br>
+                      <img src="imgjiguo/电话.png"> &nbsp;<span>18699563265</span><br>
+                      <img src="imgjiguo/地址.png"> &nbsp;<span>浙江省台州市温岭人民路281号</span>
+                  </div>
+              </div>
+                 <div class="seven_a11"><div class="seven_a111">同城汽车装饰中心</div>
+                     <div class="seven1">
+                         <img src="imgjiguo/人.png"> &nbsp;<span> 李杰</span><br>
+                         <img src="imgjiguo/电话.png"> &nbsp;<span>18699563265</span><br>
+                         <img src="imgjiguo/地址.png"> &nbsp;<span>浙江省台州市温岭人民路281号</span>
+                     </div>
+                     <div class="seven1">
+                         <img src="imgjiguo/人.png"> &nbsp;<span> 李杰</span><br>
+                         <img src="imgjiguo/电话.png"> &nbsp;<span>18699563265</span><br>
+                         <img src="imgjiguo/地址.png"> &nbsp;<span>浙江省台州市温岭人民路281号</span>
+                     </div>
+                 </div>
+                      <div class="seven_a11"><div class="seven_a111">同城汽车装饰中心</div>
+                          <div class="seven1">
+                              <img src="imgjiguo/人.png"> &nbsp;<span> 李杰</span><br>
+                              <img src="imgjiguo/电话.png"> &nbsp;<span>18699563265</span><br>
+                              <img src="imgjiguo/地址.png"> &nbsp;<span>浙江省台州市温岭人民路281号</span>
+                          </div>
+                          <div class="seven1">
+                              <img src="imgjiguo/人.png"> &nbsp;<span> 李杰</span><br>
+                              <img src="imgjiguo/电话.png"> &nbsp;<span>18699563265</span><br>
+                              <img src="imgjiguo/地址.png"> &nbsp;<span>浙江省台州市温岭人民路281号</span>
+                          </div>
+                      </div>
+                          <div class="seven_a11"><div class="seven_a111">同城汽车装饰中心</div>
+                              <div class="seven1">
+                                  <img src="imgjiguo/人.png"> &nbsp;<span> 李杰</span><br>
+                                  <img src="imgjiguo/电话.png"> &nbsp;<span>18699563265</span><br>
+                                  <img src="imgjiguo/地址.png"> &nbsp;<span>浙江省台州市温岭人民路281号</span>
+                              </div>
+                          </div>
+                                <div class="seven_a11"><div class="seven_a111">同城汽车装饰中心</div>
+                                    <div class="seven1">
+                                        <img src="imgjiguo/人.png"> &nbsp;<span> 李杰</span><br>
+                                        <img src="imgjiguo/电话.png"> &nbsp;<span>18699563265</span><br>
+                                        <img src="imgjiguo/地址.png"> &nbsp;<span>浙江省台州市温岭人民路281号</span>
+                                    </div>
+                                </div>
+                                    </div>
+                                         </div>
+    <div class="eight"></div>
+    <div class="seven">
+        <div class="seven_a"></div>
+
+        <div class="seven_a1">
+            <div class="seven_a11">
+                <div class="seven_a111">同城汽车装饰中心</div>
+                <div class="seven1">
+                    <img src="imgjiguo/人.png"> &nbsp;<span> 李杰</span><br>
+                    <img src="imgjiguo/电话.png"> &nbsp;<span>18699563265</span><br>
+                    <img src="imgjiguo/地址.png"> &nbsp;<span>浙江省台州市温岭人民路281号</span>
+                </div>
+            </div>
+
+            <div class="seven_a11"> <div class="seven_a111">同城汽车装饰中心</div>
+                <div class="seven1">
+                    <img src="imgjiguo/人.png"> &nbsp;<span> 李杰</span><br>
+                    <img src="imgjiguo/电话.png"> &nbsp;<span>18699563265</span><br>
+                    <img src="imgjiguo/地址.png"> &nbsp;<span>浙江省台州市温岭人民路281号</span>
+                </div>
+            </div>
+            <div class="seven_a11"><div class="seven_a111">同城汽车装饰中心</div>
+                <div class="seven1">
+                    <img src="imgjiguo/人.png"> &nbsp;<span> 李杰</span><br>
+                    <img src="imgjiguo/电话.png"> &nbsp;<span>18699563265</span><br>
+                    <img src="imgjiguo/地址.png"> &nbsp;<span>浙江省台州市温岭人民路281号</span>
+                </div>
+                <div class="seven1">
+                    <img src="imgjiguo/人.png"> &nbsp;<span> 李杰</span><br>
+                    <img src="imgjiguo/电话.png"> &nbsp;<span>18699563265</span><br>
+                    <img src="imgjiguo/地址.png"> &nbsp;<span>浙江省台州市温岭人民路281号</span>
+                </div>
+            </div>
+            <div class="seven_a11"><div class="seven_a111">同城汽车装饰中心</div>
+                <div class="seven1">
+                    <img src="imgjiguo/人.png"> &nbsp;<span> 李杰</span><br>
+                    <img src="imgjiguo/电话.png"> &nbsp;<span>18699563265</span><br>
+                    <img src="imgjiguo/地址.png"> &nbsp;<span>浙江省台州市温岭人民路281号</span>
+                </div>
+                <div class="seven1">
+                    <img src="imgjiguo/人.png"> &nbsp;<span> 李杰</span><br>
+                    <img src="imgjiguo/电话.png"> &nbsp;<span>18699563265</span><br>
+                    <img src="imgjiguo/地址.png"> &nbsp;<span>浙江省台州市温岭人民路281号</span>
+                </div>
+            </div>
+            <div class="seven_a11"><div class="seven_a111">同城汽车装饰中心</div>
+                <div class="seven1">
+                    <img src="imgjiguo/人.png"> &nbsp;<span> 李杰</span><br>
+                    <img src="imgjiguo/电话.png"> &nbsp;<span>18699563265</span><br>
+                    <img src="imgjiguo/地址.png"> &nbsp;<span>浙江省台州市温岭人民路281号</span>
+                </div>
+            </div>
+            <div class="seven_a11"><div class="seven_a111">同城汽车装饰中心</div>
+                <div class="seven1">
+                    <img src="imgjiguo/人.png"> &nbsp;<span> 李杰</span><br>
+                    <img src="imgjiguo/电话.png"> &nbsp;<span>18699563265</span><br>
+                    <img src="imgjiguo/地址.png"> &nbsp;<span>浙江省台州市温岭人民路281号</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="eight"></div>
+
+    <div class="nine">
+       <div  class="q1 q"> <img src="imgjiguo/botton.png"><span>正品保障</span></div>
+        <div  class="q2 q"> <img src="imgjiguo/botton1.png"><span>全程追踪</span></div>
+            <div  class="q3 q"> <img src="imgjiguo/botton2.png"><span>客户监督</span></div>
+                <div  class="q4 q">  <img src="imgjiguo/botton3.png"><span>售后无忧</span></div>
+                    <div  class="q5 q">   <img src="imgjiguo/botton4.png"><span>准时送达</span></div>
+    </div>
+<div class="ten">
+    <div class="ten_a1"></div>
+    <div class="ten_a2"></div>
+    <div class="ten_a3"></div>
+    <div class="ten_a4">
+        <div class="ten_a5">
+            <h3 class="w1">关于易和</h3>
+            <h6 class="w1">关于易和</h6>
+            <h6 class="w1">关于易和</h6>
+            <h6 class="w1">关于易和</h6>
+        </div>
+        <div class="ten_a5">
+            <h3 class="w1">关于易和</h3>
+            <h6 class="w1">关于易和</h6>
+            <h6 class="w1">关于易和</h6>
+            <h6 class="w1">关于易和</h6>
+        </div>
+        <div class="ten_a5">
+            <h3 class="w1">关于易和</h3>
+            <h6 class="w1">关于易和</h6>
+            <h6 class="w1">关于易和</h6>
+            <h6 class="w1">关于易和</h6>
+        </div>
+        <div class="ten_a5">
+            <h3 class="w1">关于易和</h3>
+            <h6 class="w1">关于易和</h6>
+            <h6 class="w1">关于易和</h6>
+            <h6 class="w1">关于易和</h6>
+        </div>
+
+        </div>
+    </div>
+
+     <div class="low"></div>
+
+
+
+</body>
+
+<script>
+    var items=document.getElementsByClassName("item");
+    var contain=document.getElementsByClassName("contain")[0];
+    var outerDiv=document.getElementsByClassName("third")[0];
+    var listDiv=document.getElementsByClassName("list");
+    var  num1=1;
+    function moveImg() {
+
+        var left= contain.style.left;
+        left=left.substring(left.length-2,-1);
+
+
+        if (left=="-3200"){
+            contain.style.transition="";
+            contain.style.left="-800px";
+
+            setTimeout(function () {//单次循环定时器
+                contain.style.transition="all 1s";
+                contain.style.left="-1600px";
+            },20);
+
+        }
+        else {
+            contain.style.left=left-800+"px";
+        }
+
+        for(var i=0;i<listDiv.length;i++){
+            listDiv[i].style.background="gray";
+        }
+
+        if(num1>=listDiv.length){
+            num1=0;
+        }
+        listDiv[num1].style.background="red";
+        num1++;
+
+
+    }
+
+    var num= setInterval(moveImg,2000);
+
+    function clearTime() {
+        clearInterval(num);
+    }
+//    outerDiv.onmouseover=function () {
+//
+//        clearTime();
+//
+//    }
+//    outerDiv.onmouseout=function () {
+//       num=setInterval(moveImg,2000);
+//
+//    }
+    var low=document.getElementsByClassName("low")[0];
+    document.addEventListener("mousewheel",function () {
+        if (document.body.scrollTop > 1200) {
+            document.body.scrollTop = 0;
+        }
+        else if (document.body.scrollTop > 400) {
+            low.style.opacity = "1";
+
+        }
+
+        else {
+            low.style.opacity = "0";
+        }
+    }
+</script>
+</html>

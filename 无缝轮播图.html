@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无缝轮播图</title>
+    <style>
+        .outer{
+            /*overflow: auto;*/
+            width: 800px;
+            height: 450px;
+            position: relative;
+            overflow: hidden;/*清浮动*/
+        }
+        .item{
+            width: 800px;
+            height: 450px;
+            background-size: 800px 450px;
+            position:absolute;
+
+        }
+        .item1{
+            background-image: url("img/game_1.jpg");
+            /*left: 0px;*/
+
+        }
+        .item2{
+            background-image: url("img/game_2.jpg");
+            /*left: 800px;*/
+        }
+        .item3{
+            background-image: url("img/game_3.jpg");
+            /*left: 1600px;*/
+        }
+        .itemback{
+            background-image: url("img/game_3.jpg");}
+        /*left: 800px;*/
+        .itemfirst{
+            background-image: url("img/game_1.jpg");}
+        /*left: 800px;*/
+        .contain{
+            position: relative;
+            /*transition: all 1s;*/
+        }
+        .lefts{
+            color: white;
+            font-size: 30px;
+            width: 30px;
+            height: 60px;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            background: rgba(0,0,0,0);
+            display: none;
+        }
+        .rights{
+            color: white;
+            font-size: 30px;
+            width: 30px;
+            height: 60px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            background: rgba(0,0,0,0);
+            display: none;
+        }
+        .outer:hover .lefts,.outer:hover .rights{
+            display: block;
+        }
+        .lists{
+            border-radius: 9.5px;
+            width: 55px;
+            height: 15px;
+            background: rgba(127,127,127,0.7);
+            position: absolute;
+           left: 50%;
+            bottom: 10px;
+            margin-left: -30px;
+            padding: 2px;
+        }
+        .list{
+            width:15px;
+            height: 15px;
+            background: gray;
+            border-radius: 50%;
+            float: left;
+           margin-left: 3px;
+
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="contain" style="left: 0px;left: -800px;transition: all 1s">
+        <div class="item itemback" style="left: 0px"></div>
+        <div class="item item1" style="left:800px;"></div>
+        <div class="item item2" style="left:1600px;"></div>
+        <div class="item item3" style="left:2400px;"></div>
+        <div class="item itemfirst" style="left: 3200px"></div>
+    </div>
+        <div class="lefts"><</div>
+    <div class="rights">
+        >
+    </div>
+    <div class="lists">
+        <div class="list" style="background: #F40"></div>
+        <div class="list"></div>
+        <div class="list"></div>
+    </div>
+
+</div>
+
+
+    <button class="btn" onclick="clearTime()">停止</button>
+
+
+</body>
+<script>
+
+    var items=document.getElementsByClassName("item");
+    var contain=document.getElementsByClassName("contain")[0];
+    var outerDiv=document.getElementsByClassName("outer")[0];
+    var listDiv=document.getElementsByClassName("list");
+    var  num1=1;
+    function moveImg() {
+
+      var left= contain.style.left;
+        left=left.substring(left.length-2,-1);
+
+
+        if (left=="-3200"){
+            contain.style.transition="";
+            contain.style.left="-800px";
+
+            setTimeout(function () {//单次循环定时器
+                contain.style.transition="all 1s";
+                contain.style.left="-1600px";
+            },20);
+
+        }
+        else {
+            contain.style.left=left-800+"px";
+        }
+
+        for(var i=0;i<listDiv.length;i++){
+            listDiv[i].style.background="gray";
+        }
+        console.log(num1);
+        if(num1>=listDiv.length){
+            num1=0;
+        }
+        listDiv[num1].style.background="red";
+        num1++;
+
+
+    }
+        //    window.requestAnimationFrame()
+   var num= setInterval(moveImg,2000);//循环定时器
+
+    function clearTime() {
+        clearInterval(num);//清除定时器
+    }
+    outerDiv.onmouseover=function () {
+        console.log("heiheihei");
+        clearTime();
+
+    }
+    outerDiv.onmouseout=function () {
+        console.log("我是out");
+        num=setInterval(moveImg,2000);
+        console.log("定时器的num是"+num)
+    }
+</script>
+</html>

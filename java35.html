@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style >
+        .outer{
+            width: 600px;
+            height: 600px;
+            background: blue;
+        }
+        .inner{
+            width: 300px;
+            height: 300px;
+            background: deeppink;
+        }
+    </style>
+</head>
+<body>
+
+<div class="outer">
+    <div class="inner"></div>
+</div>
+</body>
+<script>
+    var outerDiv=document.getElementsByClassName("outer")[0];
+
+//    outerDiv.onmouseover=function () {
+//        console.log("我移入了");
+//
+//    }
+//    outerDiv.onmouseout=function () {
+//        console.log("我移出了");
+//    }
+    outerDiv.onmouseenter=function () {
+        console.log("我移入了");
+    }
+    outerDiv.onmouseleave=function () {
+        console.log("我离开了");
+    }
+</script>
+</html>

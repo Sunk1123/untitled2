@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outer{
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background: deepskyblue;
+            animation: moveright 15s infinite;
+            /*无限次播放infinite,从头到尾forword，次数用数字*/
+      animation-timing-function: cubic-bezier(1,1.44,1,-1.34);
+
+        }
+        @keyframes moveright {
+        0%{
+            left: 0px;
+        }
+
+            50%{
+                left: 600px;
+                background: green;
+            }
+
+            100%{
+                left: 0px;
+                background: yellow;
+                transform: rotateX(2080deg)rotateY(2080deg)rotateZ(2080deg);
+
+            }
+
+        }
+    </style>
+</head>
+<body>
+<div class="outer"></div>
+
+</body>
+</html>

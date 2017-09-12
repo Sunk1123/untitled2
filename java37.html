@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .item{
+            width: 100px;
+            height: 60px;
+            background: #FF6537;
+            border: 1px solid red;
+            position: relative;
+        }
+        .inner{
+            width: 700px;
+            height: 600px;
+            border: 1px solid #cccccc;
+            position: absolute;
+            left: 100px;
+            top: 0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="item"> <div class="inner"></div> </div>
+<div class="item"><div class="inner"></div></div>
+
+<div class="item"><div class="inner"></div></div>
+<div class="item"><div class="inner"></div></div>
+<div class="item"><div class="inner"></div></div>
+
+
+
+</body>
+<script>
+    var items=document.getElementsByClassName("item");
+    var inners=document.getElementsByClassName("inner");
+
+    for (var i=0;i<items.length;i++){
+        function a(index) {
+            console.log("你获取到的值为"+index)
+            items[i].onmouseenter=function (index) {
+
+                inners[i].style.display="block";
+
+            };//匿名函数的调用
+         items[i].onmouseleave=function () {
+        inners[i].style.display="none";
+    }
+    };
+            a(i);
+
+
+        }
+
+
+
+</script>
+</html>

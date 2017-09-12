@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .imgs{
+            /*overflow: auto;*/
+            width: 800px;
+            height: 450px;
+            position: relative;
+            overflow: hidden;
+        }
+        .item{
+            width: 800px;
+            height: 450px;
+            background-size: 800px 450px;
+            position: absolute;
+
+        }
+        .item1{
+            background-image: url("img/game_1.jpg");
+            /*left: 0px;*/
+        }
+        .item2{
+            background-image: url("img/game_2.jpg");
+            /*left: 800px;*/
+        }
+        .item3{
+            background-image: url("img/game_3.jpg");
+            /*left: 1600px;*/
+        }
+        .item4{
+            background-image: url("img/game_4.jpg");
+            /*left: 2400px;*/
+        }
+    </style>
+</head>
+<body>
+<div class="imgs">
+    <div class="item item1" style="left:0px;"></div>
+    <div class="item item2" style="left:800px;"></div>
+    <div class="item item3" style="left:1600px;"></div>
+    <div class="item item4" style="left:2400px;"></div>
+</div>
+
+</body>
+<script>
+    var items=document.getElementsByClassName("item");
+    function moveImg() {
+        for(var i=0;i<items.length;i++){
+            var left= items[i].style.left;
+            left=left.substring(0,left.length-2);
+//                left=left.substring(left.length-2,-1);
+            items[i].style.left=left-1+"px";
+
+        }
+    }
+    setInterval(moveImg,10);
+</script>
+</html>

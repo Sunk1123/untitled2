@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .move{
+            width: 100px;
+            height: 100px;
+            background: deepskyblue;
+            position: absolute;
+
+        }
+    </style>
+</head>
+<body>
+<div class="move" style="left: 10.5px;" >
+</div>
+</body>
+<script>
+    var moveDiv = document.getElementsByClassName("move")[0];
+    //  没法自己来设置时间的，是由我们的浏览器自己去进行计算的，来决定多长时间
+    //切换一帧，如果想要让某些动作慢下来只能通过计数器配合模除来控制我们
+    //运行多少次方法才进行一次改变
+    var num = 0;
+    //一次执行20ms动5px,
+    //执行了100遍我才动5px 2000ms
+    function ani() {
+        num++;
+        console.log("111");
+        if(num % 1 == 0){
+            var left = moveDiv.style.left;
+            //如果想要将字符串转成数字类型好进行运算1.可以使用Number()强制类型转换
+            //2.也可以使用parseInt/parseFloat等方法来进行转换，只是此时要自己考虑
+            //精度缺失的问题来使用不同的方法，而Number就不存在这种问题
+            //left = Number(left.substring(left.length-2,-1));
+            left = left.substring(left.length-2,-1);
+            //left = left - 5;
+            //3.
+            left = + left + 5;
+            left += "px";
+            console.log(left);
+            moveDiv.style.left = left;
+        }
+
+        window.requestAnimationFrame(ani);
+    }
+    //    ani();
+    //  帧动画
+    window.requestAnimationFrame(ani);
+    //    ani();
+    //    setInterval(ani,50);
+
+</script>
+
+</html>

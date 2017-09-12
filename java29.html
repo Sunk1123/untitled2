@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    #center{
+        width: 300px;
+        height: 300px;
+        background: deepskyblue;
+        transition: width 1s,height 1s;
+    }
+
+    </style>
+</head>
+<body>
+    <div >
+        <div id="center">
+         </div>
+        <button class="xianshi" >显示或隐藏</button>
+    </div>
+</body>
+<script>
+    //通过点击按钮来切换center的显示和隐藏display:nine或者block
+    //能用css实现的动画或者过渡一般不会用js来实现
+    var centerDiv=document.getElementById("center");
+    var xianshiDiv=document.getElementsByClassName("xianshi")[0];
+    console.log(centerDiv);
+
+    centerDiv.onclick=function () {
+        centerDiv.style.width="400px";
+        centerDiv.style.height="400px";
+    }
+    var num=false;
+    xianshiDiv.onclick=function () {
+        num=!num;
+        if (num){
+            centerDiv.style.display="none";
+        }else {
+            centerDiv.style.display="block";
+        }
+
+
+
+    }
+
+</script>
+</html>

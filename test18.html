@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .outer{
+            transform-style:preserve-3d;
+            left:50%;
+            top:50%;
+            width: auto;
+            height: auto;
+            background-color: black;
+            position: absolute;
+        .divs{
+            transform: rotateZ(0deg) rotateY(10deg) rotateX(0deg);
+            transition: all 10s;
+            transform-origin:center;
+        }
+        .outer:hover{
+            transform: rotateZ(100deg) rotateY(100deg) rotateX(900deg);
+        }
+        .divs{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background-color: #9BACCD;
+            font-size: 50px;
+            text-align: center;
+            line-height: 200px;
+            border: 1px solid black;
+            box-shadow:0 0 30px #FFBC0E;
+        }
+        .div1{
+            transform: rotateX(30deg) translateZ(360px);
+        }
+        .div2{
+            transform: rotateX(-30deg) translateZ(360px);
+        }
+        .div3{
+            transform: rotateX(60deg) translateZ(360px);
+        }
+        .div4{
+            transform: rotateX(-60deg) translateZ(360px);
+        }
+        .div5{
+            transform: rotateX(90deg) translateZ(360px);
+        }
+        .div6{
+            transform: rotateX(-90deg) translateZ(360px);
+        }
+        .div7{
+            transform: rotateX(120deg) translateZ(360px);
+        }
+        .div8{
+            transform: rotateX(-120deg) translateZ(360px);
+        }
+        .div9{
+            transform: rotateX(150deg) translateZ(360px);
+        }
+        .div10{
+            transform: rotateX(-150deg) translateZ(360px);
+        }
+        .div11{
+            transform: rotateX(180deg) translateZ(360px);
+        }
+        .div12{
+            transform: rotateX(0deg) translateZ(360px);
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="divs div1">1</div>
+    <div class="divs div2">2</div>
+    <div class="divs div3">3</div>
+    <div class="divs div4">4</div>
+    <div class="divs div5">5</div>
+    <div class="divs div6">6</div>
+    <div class="divs div7">7</div>
+    <div class="divs div8">8</div>
+    <div class="divs div9">9</div>
+    <div class="divs div10">10</div>
+    <div class="divs div11">11</div>
+    <div class="divs div12">12</div>
+</div>
+</body>
+</html>

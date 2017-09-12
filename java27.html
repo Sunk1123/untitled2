@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .center{
+            background: darkcyan;
+            width: 300px;
+            height: 300px;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="center" style="color: red">
+            1
+        </div>
+        <div class="center" onclick="secondChange()">
+            2
+        </div>
+    </div>
+
+</body>
+<script>
+    // 1.找到第一个类名叫center的节点给他绑定点击事件 js中存在类名的节点
+    var centerDiv=document.getElementsByClassName("center")[0];
+    var centerDiv2=document.getElementsByClassName("center")[1];
+    console.log(centerDiv.style);
+   //方法的声明
+    function  changesBg() {
+    alert("我要改背景了");
+      }   //事件，我们只是绑定事件到对应的DOM节点，浏览器要检测这个事件什么时候会执行
+    //用户执行该事件，绑定在事件的方法才会执行
+    //
+    //2.确定要绑定哪个事件
+    //3.确定这个事件要干什么事情
+    //4.将事件跟要做的事件绑定一起
+
+    //方法的调用
+//  changesBg();
+    // 第一种：centerDiv.onclick=changesBg;
+// 第二种使用匿名函数的形式
+    var str="我是点击事件的执行";//全局变量
+    //写在方法内部叫局部变量作用域只在方法体的内部出来就不能被使用
+       centerDiv.onclick=function () {
+
+        console.log(str);
+        changesBg();
+           console.log(this);//当前触发这个方法的人（div）
+           //centerDiv.style.background="red";
+           this.style.background="green";
+ }
+ function secondChange() {
+     alert("这是第二个的点击事件");
+
+ }
+
+</script>
+
+</html>
