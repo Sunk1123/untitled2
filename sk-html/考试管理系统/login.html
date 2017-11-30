@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>考试管理系统</title>
+</head>
+<style>
+   .outer{
+       width: 1000px;
+       height: 600px;
+       background-image: url("Examination management /index1.jpg");
+        background-size: contain;
+       background-repeat: no-repeat;
+       margin-top: 10%;
+       margin-left: 20%;
+       display: inline-block;
+       position: relative;
+   }
+    .outer_a1{
+        color: #FF4400;
+        font-size: 50px;
+        float: left;
+        margin-top: 4%;
+        margin-left:56% ;
+    }
+    .outer_a1{
+        overflow: hidden;
+    }
+    .outer_a2{
+        color: yellow;
+        font-size: 30px;
+        float: left;
+        margin-top: 0%;
+        margin-left: 37%;
+        display: inline-block;
+    }
+    .outer_a2{
+        overflow: hidden;
+    }
+    .center{
+        border: 2px solid red;
+        width: 585px;
+        height: 280px;
+        display: inline-block;
+        position: absolute;
+        left:0 ;
+        top: 25%;
+
+    }
+    .center_c1{
+        width:300px ;
+        height: 100%;
+        margin-left: 207px;
+     float: left;
+        position: relative;
+
+    }
+    .center_c1{
+        overflow: hidden;
+    }
+    .center_c2{
+        margin-top: 40px;
+    }
+    .center_c3{
+        margin-top: 20px;
+    }
+    .item{
+        color: blue;
+    }
+    .center_d1{
+        background-color: #9BACCD;
+      position: absolute;
+        bottom: 66px;
+        left: 0;
+        display: inline-block;
+    }
+    .center_d1 a,.center_d2 a{
+        font-size: 20px;
+        text-decoration: none;
+    }
+   .center_d2{
+       background-color: #9BACCD;
+       position: absolute;
+       bottom: 66px;
+       left: 120px;
+       display: inline-block;
+   }
+
+</style>
+<body>
+    <form action="" method="post">
+<div class="outer">
+    <div class="outer_a1">考试管理系统</div>
+    <div class="outer_a2">MySchoolPro</div>
+    <div class="center">
+        <div class="center_c1">
+    <div class="center_c2 item">用户名: <input class="login_b1" type="text" name="user"></div>
+    <div class="center_c3 item">密码&nbsp;: <input  type="password" name="password"></div>
+     <div class="center_c3 item">  用户类别: <select style="font-size: 15px" class="login_b3">
+            <option >老师</option>
+                <option>学生</option>
+         </select>
+            </div>
+            <div class="center_d1">
+            <button><a href="#">登录</a></button>
+            </div>
+            <div class="center_d2">
+                <button><a href="student_login.html">注册</a></button>
+            </div>
+
+        </div>
+    </div>
+    </form>
+</div>
+</body>
+
+
+</html>

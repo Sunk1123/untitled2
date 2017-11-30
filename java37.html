@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        div{
+            overflow: hidden;
+        }
         .item{
             width: 100px;
             height: 60px;
@@ -18,13 +21,16 @@
             position: absolute;
             left: 100px;
             top: 0;
+            display: none; left: 100px;
+            top: 0;
             display: none;
         }
     </style>
 </head>
 <body>
 
-<div class="item"> <div class="inner"></div> </div>
+<div class="item"> <div class="inner"></div>
+   </div>
 <div class="item"><div class="inner"></div></div>
 
 <div class="item"><div class="inner"></div></div>
@@ -40,7 +46,7 @@
 
     for (var i=0;i<items.length;i++){
         function a(index) {
-            console.log("你获取到的值为"+index)
+            console.log("你获取到的值为"+index);
             items[i].onmouseenter=function (index) {
 
                 inners[i].style.display="block";

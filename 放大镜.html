@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bigDiv{
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            overflow: hidden;
+            position: relative;
+            float: left;
+            display: none;
+        }
+        .bigDiv img{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 800px;
+        }
+        .imgDiv{
+            margin-top: 200px;
+            margin-left: 200px;
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            background-image:url("imgjiguo/耳机.jpg");
+            background-size: 400px 400px;
+            float: left;
+            position: relative;
+        }
+        #mask{
+            width: 200px;
+            height: 200px;
+            background: yellow;
+            opacity: 0.5;
+            display: none;
+            position: absolute;
+            left: 0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+            <div class="imgDiv">
+                  <div id="mask"> </div>
+            </div>
+
+<div class="bigDiv">
+    <img src="imgjiguo/耳机.jpg" id="bgImg">
+</div>
+</body>
+<script>
+         var imgDiv=document.getElementsByClassName("imgDiv")[0];
+         var bigDiv=document.getElementsByClassName("bigDiv")[0];
+         var biImg=document.getElementById("bgImg");
+         var mask=document.getElementById("mask");
+            imgDiv.onmouseenter=function () {
+                bigDiv.style.display="block";
+                mask.style.display="block";
+                imgDiv.onmousemove=function (e) {
+                    var ev=e||window.event;
+//                    console.log("获取到的鼠标X的坐标为"+ev.clientX)
+                    var x=ev.pageX-mask.offsetWidth/2-imgDiv.offsetLeft;
+                    var y=ev.pageY-mask.offsetHeight/2-imgDiv.offsetTop;
+                    console.log("外层的宽度大小为"+imgDiv.offsetWidth)
+                    console.log("外层的高度大小为"+imgDiv.offsetHeight)
+                    if(x<0){
+                        x=0;
+                    }
+                    else if ( x+mask.offsetWidth>imgDiv.offsetWidth){
+                        x=imgDiv.offsetWidth-mask.offsetWidth;
+
+                    }
+                    if(y<0){
+                        y=0;
+                    }
+                    else if( y+mask.offsetHeight>imgDiv.offsetHeight) {
+                        y=imgDiv.offsetHeight-mask.offsetHeight;
+                    }
+
+
+
+                    mask.style.left=x+"px";
+                    mask.style.top=y+"px";
+
+
+                    bgImg.style.left=-x*2+"px";
+                    bgImg.style.top=-y*2+"px";
+                }
+            }
+            imgDiv.onmouseleave=function () {
+
+                bigDiv.style.display="none";
+                mask.style.display="none";
+            }
+
+</script>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            overflow: hidden;
+        }
+        .inner{
+            width: 50px;
+            height: 50px;
+            background: deepskyblue;
+            border: 2px solid black;
+            float: left;
+        }
+        .rights{
+            float: left;
+            width: 300px;
+            height: 50px;
+            background: deeppink;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <div class="inner" indexs="0" >1</div>
+            <div class="rights" >1</div>
+        </div>
+        <div>
+            <div class="inner" indexs="1">2</div>
+            <div class="rights" >2</div>
+        </div>
+        <div>
+            <div class="inner" indexs="2">3</div>
+            <div class="rights" >3</div>
+        </div>
+        <div>
+            <div class="inner" indexs="3">4</div>
+            <div class="rights" >4</div>
+        </div>
+    </div>
+</body>
+<script>
+
+    var innerdiv=document.getElementsByClassName("inner");
+    var rightDiv = document.getElementsByClassName("rights");
+    //本身有的属性可以直接使用DOM对象.属性名的方式来获取以及设置
+    //自定义的属性需要通过getAttribute/setAttribute来进行获取和设置
+    //自定义属性的使用场景绝大部分都帮我们储存想要存下来的数据，供我们
+    //在需要使用的时候来获取的
+//    for(var i=0;i<innerdiv.length; i++){
+    //        var index = innerdiv[i].getAttribute("indexs");
+    //        console.log(innerdiv[i]);
+    //        console.log(index);
+    //        innerdiv[i].setAttribute("data-id",i);
+    //    }
+    for(var i=0;i<innerdiv.length; i++){
+
+         innerdiv[i].onclick = function () {
+            var index = this.getAttribute("indexs")
+            console.log(index);
+            rightDiv[index].style.display = "block";
+        }
+
+    }
+
+//    for(var i=0;i<innerdiv.length;i++){
+//        innerdiv[i].onclick=function (index) {
+//            return function () {
+//                var text =innerdiv[index].innerText;
+//                alert(text);
+//            }
+//        }(i)
+//    }
+
+
+</script>
+</html>

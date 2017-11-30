@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outer{
+        }
+        .inner{
+            height: 100px;
+            margin-bottom: 50px;
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="outer" >
+    <div class="inner"  style="background: red" >
+
+    </div>
+    <div class="inner" style="background: green">
+
+    </div>
+</div>
+
+
+</body>
+<script src="jquery-1.8.3.min.js" ></script>
+<script>
+    var inner = document.getElementsByClassName("inner");
+    //能够帮我们查找到我们想要的样式，但是只会返回我们找到的第一个元素对应的样式
+    //js当中想要通过style来给节点赋值只能使用驼峰命名法的方式来进行赋值，
+    //而jq不光支持驼峰命名法的方式还支持background-color这种方式
+    var bg = $(".inner").css("background-color");
+
+    //找到所有的inner,设置他们的背景颜色r值依次加深30
+    //如果是设置样式就是将所有的inner都设置上样式了
+    //$(".inner").css("background","blue");
+    //将jq对象转成js对象
+    //$(".inner").get()
+
+    var arr = ["yellow","cyan","green"];
+
+    for(var i=0; i<$(".inner").length; i++){
+        //console.log(arr[i]);
+        var obj = {}
+        obj.background = arr[i];
+        obj.width = 100 + 200 * i;//在jq当中设置可以只写数值而不带px的
+        $(".inner").eq(i).css(obj);
+    }
+
+
+    //    $(".inner").css("background",function (index,value) {
+    //        console.log("下标为："+index);
+    //        console.log("值为："+value)
+    //    })
+    var obj1 = {
+
+        background: function (index,value) {
+            console.log("下标为："+index);
+            console.log("值为："+value);
+            return arr[index];
+        },
+        width : function (index,value) {
+            console.log("下标为："+index);
+            console.log("值为："+value);
+            var widths = parseInt(value) * 2;
+            console.log(widths);
+            return widths;
+        }
+
+
+    }
+    $(".inner").css(obj1);
+
+
+
+
+
+    console.log(bg);
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .inner{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner">
+
+    </div>
+</div>
+</body>
+<script src="jquery-1.8.3.min.js"></script>
+<script>
+    $(".inner").fadeIn(1000,"swing",function () {//swing和liner设置速度
+        alert("已经完成");
+    });//淡入 淡出fadeout
+
+</script>
+</html>

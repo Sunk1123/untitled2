@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="top">
+    <table border="1" id="shoppingCar">
+        <thead>
+         <tr>
+             <th><input type="checkbox" class="checkAll check">&nbsp;全选</th>
+             <th>商品</th>
+             <th>单价</th>
+             <th>数量</th>
+             <th>小计</th>
+             <th>操作</th>
+         </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th><input type="checkbox" class="check"></th>
+            <th>苹果</th>
+            <th>10.00</th>
+            <th><span class="reduce">-</span>
+
+                <input type="text" value="1">
+                <span class="add">+</span>
+            </th>
+            <th>10.00</th>
+            <th><span class="delete">删除</span></th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" class="check"></th>
+            <th>苹果</th>
+            <th>10.00</th>
+            <th><span class="reduce">-</span>
+               <input type="text" value="1">
+                <span class="add">+</span>
+            </th>
+            <th>10.00</th>
+            <th><span class="delete">删除</span></th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" class="check"></th>
+            <th>苹果</th>
+            <th>10.00</th>
+            <th><span class="reduce">-</span>
+                <input type="text" value="1">
+                <span class="add">+</span>
+            </th>
+            <th>10.10</th>
+            <th><span class="delete">删除</span></th>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<div id="foot" class="priceCount">合计：￥<span>0.00</span></div>
+
+</body>
+<script>
+    var  check=document.getElementsByClassName("check");
+    var checkAll=document.getElementsByClassName("checkAll")[0];
+    var shoppingCar=document.getElementById("shoppingCar");
+    var priceCount=document.getElementsByClassName("priceCount")[0];
+    var tr=shoppingCar.children[1].rows;
+    //合计
+    function getCount() {
+        var price=0;
+        for(var i=0; i<tr.length;i++){
+            if(tr[i].getElementsByTagName("input")[0].checked){
+               var Subprice= parseFloat(tr[i].cells[4].innerHTML);
+                price+=Subprice;
+
+            }
+        }
+        priceCount.innerHTML=price;
+    }
+    for(var i=0;i<check.length;i++){
+        check[i].onclick=function () {
+            if (this.className=="checkAll check"){
+                for(var j=0;j<check.length;j++){
+                    check[j].checked=this.checked;
+                }
+            }
+            if (this.checked==false){
+                checkAll.checked=false;
+            }
+            getCount();
+        }
+    };
+    //小计
+    function getSubprice(tr) {
+        var tds=tr.cells;
+        var input=tr.getElementsByTagName("input")[1];
+        var val=parseInt(input.value);
+        var price=parseFloat(tds[2].innerHTML);
+         tds[4].innerHTML= val*price;
+        getCount();
+
+    }
+
+    for( var i=0;i<tr.length;i++){
+        tr[i].onclick=function (e) {
+            var e=e||window.event;
+            var el=e.srcElement;
+            var cls=el.className;
+            var input=this.getElementsByTagName("input")[1];
+            var val=parseInt(input.value);
+            switch (cls){
+                case "add":
+                  input.value=val+1;
+                        getSubprice(this);
+                      break;
+                case  "reduce":
+                    if (input.value>1){
+                        input.value=val-1;
+                        getSubprice(this);
+                    }
+
+                    break;
+                case "delete":
+                        this.parentNode.removeChild(this);
+
+                    break;
+                default:
+                    break;
+            }
+        }
+
+    }
+</script>
+</html>

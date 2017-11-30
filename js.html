@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="outer">
+    <div class="inner" data-id="0" >1</div>
+    <div class="inner" data-id="1">2</div>
+    <div class="inner" data-id="2">3</div>
+    <div class="inner" data-id="3">4</div>
+</div>
+</body>
+<script src="../js/jquery-1.8.3.min.js" ></script>
+<script>
+    //如果是传属性名形式的话只会帮我们获取到第一个元素的属性
+    console.log($(".inner").attr("data-id"));
+    //如果我们使用的是两个参数key,value的形式是设置值，
+    //而且是所有找到的标签都设置上了对应的属性值，
+    console.log($(".inner").attr("data-id",8));
+    //如果只想给某一个去设置属性需要配合eq(index)方法
+    //jq也是支持链式写法的
+    //eq()方法会帮我们从选择器当中把你要使用的这个标签单独拿出来
+    //重新返回一个只有这个标签的jq对象供你使用，所以其他的不会受到影响
+    console.log($(".inner").eq(0));
+    $(".inner").eq(0).attr("data-id",110);
+
+    var obj = {
+        "data-id":119,
+        "indexs":3
+    }
+    //key，value的形式只能设置一个属性，如果想一次性设置多个属性
+    //attr(object)通过传对象的形式来实现
+    $(".inner").eq(3).attr(obj);
+
+    $(".inner").attr("data-id",function (index,value) {
+        console.log(this);
+        console.log("当前是第几个元素："+index);
+        console.log("对应的属性值是："+value);
+    })
+
+</script>
+</html>

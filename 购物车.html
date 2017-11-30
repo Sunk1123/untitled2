@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .inner{
+            width: 100px;
+            height: 100px;
+            background: deeppink;
+        }
+        .inner-p{
+            background: greenyellow;
+        }
+        .forms{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div class="forms" >
+    <input id="user" type="text" name="username" placeholder="请输入用户名失焦" onblur="regs()"  >
+     <br/>
+    <input id="pwd" type="password" name="password" placeholder="请输入密码" >
+</div>
+
+    <input type="text" id="username" value="lck" >
+
+         <button onclick="getValue()" >完成</button>
+    <div id="outer" class="haha divs" >
+          <div class="header" ></div>
+          <div class="center"></div>
+          <div class="footer"></div>
+    </div>
+
+</body>
+
+
+
+
+<script>
+
+    var outer = document.getElementById("outer");
+    //.之后没有=叫get获取
+    console.log("输出的className是："+outer.className);
+    //.之后有=叫set设置
+    //要获取节点的类型class需要通过节点调用className这个属性来获取
+    outer.className = "heihei outers";
+    //想要创建节点需要调用createElement("div")这个方法，
+    //参数就是想要创建的节点的标签名，创建好了不是将这个
+    //节点放到页面当中了，如果想要将这个创建好的节点放到
+    //页面当中需要确定该节点想要放到哪个节点当中然后使用
+    //已经存在的节点.append(要添加的节点)这个方法来实现
+    var inner = document.createElement("div");
+    inner.className = "inner";
+
+    //    inner.innerText = "haha";
+    inner.innerHTML = "<p class='inner-p'>asdcbxzmcbjas</p>";
+
+    var center = document.getElementsByClassName("center")[0];
+    setTimeout(function () {
+        center.append(inner);
+    },2000);
+    var userInput = document.getElementById("username");
+    function getValue() {
+        console.log("你获取到的value值是："+userInput.value);
+        var values = document.createElement("p");
+        values.innerHTML = userInput.value;
+        outer.append(values);
+    }
+    var user = document.getElementById("user");
+    function regs() {
+        console.log("失焦事件出发了");
+        var val = user.value;
+        if(val == "lck"){
+            console.log("用户名可用");
+        }else{
+            console.log("用户名已被占用，请重新输入");
+        }
+    }
+
+
+</script>
+</html>

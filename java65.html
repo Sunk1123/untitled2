@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #aaa{
+            /*background: blue;*/
+            border: 1px solid black
+        }
+    </style>
+</head>
+<body>
+
+<div class="outer" >
+
+    <div class="item item1" id="aaa" >
+        <p>1</p>
+        <div></div>
+        <a id="a1" >点赞</a>
+    </div>
+    <div class="item item2" >
+        <p>2</p>
+        <a>点赞</a>
+    </div>
+    <div class="item item3" >
+        <p>3</p>
+        <a>点赞</a>
+    </div>
+    <button>增加</button>
+</div>
+
+</body>
+<script src="jquery-1.8.3.min.js" ></script>
+<script src="jquery.color.js" ></script>
+<script>
+    $("a").click(function () {
+        console.log($(this).parent().index());
+      var indexValue = $(this).index();
+       console.log(indexValue);
+
+        $(this).parent().hide(1000);
+    })
+    $("button").click(function () {
+        $(".item1").slideDown(1000);
+        $("#aaa").animate(
+                {    height:300,
+                    width: 300,
+                    borderWidth: 10,
+                    backgroundColor:"rgb(255,0,0)"
+                },1000
+        )
+    });
+        $(".item1").hover(
+            function () {
+                $(this).css("background","red");
+                console.log("移入了")
+            },function () {
+                $(this).css("background","blue");
+                console.log("移出了")
+            }
+        )
+
+</script>
+</html>

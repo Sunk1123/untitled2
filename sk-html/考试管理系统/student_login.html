@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>考生注册</title>
+</head>
+<style>
+    .outer{
+        background-image: url("Examination management /stu_index.jpg");
+        width: 819px;
+        height: 1024px;
+        display: inline-block;
+        background-repeat: no-repeat;
+        margin-top: 100px;
+        margin-left: 400px;
+    }
+    .regs{
+        width: 220px;
+        height: 20px;
+        border: 1px solid darkgray;
+        position: absolute;
+        right: -230px;
+        top: 7.5px;
+    }
+    .regSuccess{
+        border-color: #42ff76;
+        color: #42ff76;
+    }
+    .regError{
+        border-color: red;
+        color: red;
+    }
+    .icon{
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 0;
+        top:21.5px;
+    }
+    .successIcon{
+        background-image: url("Examination management /对勾.png");
+        background-size: 20px 20px;
+    }
+    .errorIcon{
+        background-image: url("Examination management /叉号.png");
+        background-size: 20px 20px;
+    }
+    .input-group{
+        width: 160px;
+        position: relative;
+    }
+    .outer_form{
+        margin-left: 28%;
+        margin-top: 40%;
+    }
+</style>
+<body>
+    <div class="outer">
+        <form action="" method="get" class="outer_form">
+            <div class="input-group" >
+             请输入用户名 ：<input id="user" type="text" name="username" onblur="regs()" >
+                <div class="icon" ></div>
+                <p class="regs" ></p>
+            </div>
+
+            <div class="input-group" >
+              请输入密码：  <input id="pwd" type="password" onchange="changes()" name="password" placeholder="请输入密码">
+                <div class="icon" >
+                </div>
+                <p class="regs" ></p>
+            </div>
+
+            <div class="input-group" >
+                请再次输入密码：<input id="pwd2" type="password" name="password2" oninput="regEvery()" placeholder="请输入确认密码">
+                <div class="icon" >
+                </div>
+                <p class="regs" ></p>
+            </div>
+
+            <input type="submit" value="注册">
+            <input type="button" value="退出">
+        </form>
+
+
+    </div>
+
+</body>
+<script>
+    var user = document.getElementById("user");
+    var ps = document.getElementsByClassName("regs");
+    var pwd = document.getElementById("pwd");
+    var pwd2 = document.getElementById("pwd2");
+    var icons = document.getElementsByClassName("icon");
+    function regs() {
+        var val = user.value;
+        if(val == "lck"){
+            ps[0].innerHTML = "该用户名已存在请重新输入";
+            ps[0].className = "regs regError";
+            icons[0].className = "icon errorIcon";
+        }else{
+            ps[0].innerHTML = "该用户名可用请继续进行注册";
+            ps[0].className = "regs regSuccess";
+            icons[0].className = "icon successIcon";
+        }
+    }
+    function changes() {
+        var pwdVal = pwd.value;
+        console.log(pwdVal);
+        if(pwdVal == ""){
+            ps[1].innerHTML = "密码不能为空，请重新输入";
+        }else{
+            ps[1].innerHTML = "您输入的密码符合条件请继续进行操作";
+        }
+    }
+    function regEvery(value) {
+        value = value || pwd.value;
+        var pwdVal =  value;
+
+        var pwdVal2 = pwd2.value;
+        if(pwdVal == pwdVal2){
+            ps[2].innerHTML = "密码相符";
+        }else{
+            ps[2].innerHTML = "密码与确认密码不一致，请重新输入";
+        }
+    }
+</script>
+</html>

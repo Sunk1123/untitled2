@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .ul-li{
+            background: red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li class="ul-li ">1</li>
+    <li class="ul-li ">2</li>
+    <li class="ul-li ">3</li>
+    <li class="ul-li ">4</li>
+</ul>
+</body>
+<script src="jquery-1.8.3.min.js"></script>
+<script>
+    var lis=document.getElementsByClassName("ul-li");
+//    for(var i=0;i<lis.length;i++){
+//        lis[i].className="";
+//        i--;
+//        // 不能全部清除 jq下面的方法能4个全部清除
+//        //当我们修改class之后，我们获取到的数组的长度会立刻进行改变
+//        //将置空的标签移除掉而i值确++了所以会出现一个空过去的效果
+//
+//    }
+//    for(var i=lis.length-1;i>=0;i--){//从后往前-
+//        lis[i].className="item";
+//      }
+//    $(".ul-li").removeClass(function (index,className) {
+//        console.log(index);
+//        console.log(className);
+//        if (index==1){
+//            return "ul-li";
+//        }else if (index==3){
+//            return className;
+//        }
+//
+//    });
+    $(".ul-li").addClass(function (index,className) {
+        console.log(index);
+        console.log(className);
+            return "item"+(index+1);
+    });
+</script>
+</html>
